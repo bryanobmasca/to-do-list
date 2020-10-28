@@ -9,3 +9,7 @@ export const revertStatus = (id) => {
 export const deleteToDo = (id) => {
     return { type: "DELETE_TO_DO", payload: id }
 }
+
+export const initTodos = todos => {
+    return { type: "INIT_TODO", payload: todos }
+}

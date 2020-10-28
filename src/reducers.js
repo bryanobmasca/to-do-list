@@ -11,6 +11,8 @@ const todos = (state = [], action) => {
     } else if (action.type === "DELETE_TO_DO") {
         const todos = state.filter(todo => todo.id !== action.payload);
         return todos;
+    } else if (action.type === "INIT_TODO") {
+        return action.payload
     }
     return state;
 }
