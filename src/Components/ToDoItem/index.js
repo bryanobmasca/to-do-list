@@ -12,9 +12,11 @@ class ToDoItem extends Component {
     }
 
     onRemoveItem = () => {
-        deleteTodo(this.props.todo.id).then(response => {
-            this.props.deleteToDo(response.data.id);
-        })
+        if (window.confirm('Delete "'+ this.props.todo.text+ '"?')) {
+            deleteTodo(this.props.todo.id).then(response => {
+                this.props.deleteToDo(response.data.id);
+            })
+        }
     }
 
     render() {
