@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './index.css'
-import { deleteTodo } from '../../apis/todos';
+import { deleteTodo, toggleTodo } from '../../apis/todos';
 
 
 class ToDoItem extends Component {
     onMarkAsDone = () =>{
-        this.props.revertStatus(this.props.todo.id);
+        toggleTodo(this.props.todo).then(response => {
+            this.props.revertStatus(response.data.id);
+        })
     }
 
     onRemoveItem = () =>{
