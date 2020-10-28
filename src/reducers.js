@@ -9,8 +9,7 @@ const todos = (state = [], action) => {
                 todo.id === action.payload ? { ...todo, done: !todo.done }
                     : todo);
         case "DELETE_TO_DO":
-            const todos = state.filter(todo => todo.id !== action.payload);
-            return todos;
+            return state.filter(todo => todo.id !== action.payload);
         case "INIT_TODO":
             return action.payload;
         default:
