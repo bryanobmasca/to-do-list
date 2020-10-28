@@ -2,6 +2,7 @@ import './App.css';
 import ToDoList from './Components/ToDoList';
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import FinishedListContainer from './Container/FinishedListContainer';
+import UnfinishedListContainer from './Container/UnfinishedListContainer';
 import NotFound from './Components/NotFound';
 import React, { Component } from 'react';
 import { getTodos } from './apis/todos';
@@ -49,9 +50,11 @@ class App extends Component {
                   Finished List
                 </Link>
               </Menu.Item>
-              <Menu.Item key="undone" icon={<CloseOutlined />}>
-                Unfinished List
-            </Menu.Item>
+              <Menu.Item key="unfinished" icon={<CloseOutlined />}>
+                <Link to="/unfinished">
+                  Unfinished List
+                </Link>
+              </Menu.Item>
             </Menu>
           </Sider>
           <Layout>
@@ -60,6 +63,7 @@ class App extends Component {
                 <Switch>
                   <Route exact path="/" component={ToDoList}></Route>
                   <Route exact path="/finished" component={FinishedListContainer}></Route>
+                  <Route exact path="/unfinished" component={UnfinishedListContainer}></Route>
                   <Route path="*" component={NotFound}></Route>
                 </Switch>
               </div>
