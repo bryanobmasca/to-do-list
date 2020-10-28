@@ -1,20 +1,20 @@
 import { connect } from "react-redux";
 import ToDoItem from "../Components/ToDoItem";
-import {revertStatus,deleteToDo} from "../actions";
+import { toggleTodo, deleteToDo } from "../actions";
 
 
 
 const mapDispatchToProps = (dispatch) => ({
-    revertStatus : (id) => {
-        dispatch(revertStatus(id))
+    toggleTodo: (id) => {
+        dispatch(toggleTodo(id))
     },
-    deleteToDo : (id) => {
+    deleteToDo: (id) => {
         dispatch(deleteToDo(id))
     },
 });
 
 
-const ToDoItemContainer = connect(null,mapDispatchToProps)(
+const ToDoItemContainer = connect(null, mapDispatchToProps)(
     ToDoItem
 );
 

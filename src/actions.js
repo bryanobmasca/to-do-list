@@ -1,5 +1,5 @@
 export const ADD_TO_DO = "ADD_TO_DO";
-export const REVERT_STATUS = "REVERT_STATUS";
+export const TOGGLE_TODO = "TOGGLE_TODO";
 export const DELETE_TO_DO = "DELETE_TO_DO";
 export const INIT_TODO = "INIT_TODO";
 
@@ -7,8 +7,8 @@ export const addToDo = (todo) => {
     return { type: ADD_TO_DO, payload: todo };
 }
 
-export const revertStatus = (id) => {
-    return { type: REVERT_STATUS, payload: id }
+export const toggleTodo = (id) => {
+    return { type: TOGGLE_TODO, payload: id }
 }
 
 export const deleteToDo = (id) => {
