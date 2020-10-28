@@ -1,9 +1,9 @@
 import { Col, Row } from 'antd';
 import React, { Component } from 'react';
-import DoneListContainer from '../../Container/DoneListContainer';
 import ToDoGeneratorContainer from '../../Container/ToDoGeneratorContainer';
 import ToDoGroupContainer from '../../Container/ToDoGroupContainer';
-import "./index.css"
+import { Typography } from 'antd';
+const { Title } = Typography;
 
 class ToDoList extends Component {
 
@@ -11,8 +11,9 @@ class ToDoList extends Component {
         return (
             <Row>
                 <Col span={12} offset={6}>
-                <ToDoGeneratorContainer/>
-                <ToDoGroupContainer/>
+                    <Title>All List</Title>
+                    <ToDoGeneratorContainer />
+                    <ToDoGroupContainer />
                 </Col>
             </Row>
         );

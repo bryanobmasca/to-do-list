@@ -1,7 +1,7 @@
 import './App.css';
 import ToDoList from './Components/ToDoList';
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
-import DoneListContainer from './Container/DoneListContainer';
+import FinishedListContainer from './Container/FinishedListContainer';
 import NotFound from './Components/NotFound';
 import React, { Component } from 'react';
 import { getTodos } from './apis/todos';
@@ -14,7 +14,7 @@ import {
   CloseOutlined,
 } from '@ant-design/icons';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Footer, Sider } = Layout;
 class App extends Component {
   state = {
     collapsed: true,
@@ -44,8 +44,8 @@ class App extends Component {
                   All List
                 </Link>
               </Menu.Item>
-              <Menu.Item key="done" icon={<CheckOutlined />}>
-                <Link to="/done">
+              <Menu.Item key="finished" icon={<CheckOutlined />}>
+                <Link to="/finished">
                   Finished List
                 </Link>
               </Menu.Item>
@@ -54,14 +54,15 @@ class App extends Component {
             </Menu.Item>
             </Menu>
           </Sider>
-          <Layout className="site-layout">
-            <Content style={{ margin: '40px 0 20px 0' }}>
-              <Switch>
-                <Route exact path="/" component={ToDoList}></Route>
-                <Route exact path="/done" component={DoneListContainer}></Route>
-                <Route path="*" component={NotFound}></Route>
-              </Switch>
-
+          <Layout>
+            <Content>
+              <div className="site-layout-background">
+                <Switch>
+                  <Route exact path="/" component={ToDoList}></Route>
+                  <Route exact path="/finished" component={FinishedListContainer}></Route>
+                  <Route path="*" component={NotFound}></Route>
+                </Switch>
+              </div>
             </Content>
             <Footer style={{ textAlign: 'center' }}>©2020</Footer>
           </Layout>

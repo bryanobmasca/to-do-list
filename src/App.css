@@ -4,14 +4,15 @@
   background: rgba(255, 255, 255, 0.3);
 }
 
-.site-layout .site-layout-background {
-  background: #fff;
-}
-
 .todo-group {
   border: 1px solid #e8e8e8;
   border-radius: 4px;
   overflow: auto;
   padding: 8px 24px;
-  height: 750px;
+  height: 700px;
+}
+
+.site-layout-background {
+  background: #fff;
+  padding: 24px;
 }
