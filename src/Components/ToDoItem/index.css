@@ -1,11 +1,11 @@
-.true {
- text-decoration: line-through;
+.done {
+  text-decoration: line-through;
 }
 
-.false{
- text-decoration: none;
+.undone {
+  text-decoration: none;
 }
 
-button{
-    float: right;
+button {
+  float: right;
 }

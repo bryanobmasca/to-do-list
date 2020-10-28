@@ -19,7 +19,7 @@ class ToDoItem extends Component {
     render() {
 
         return (
-            <li onClick={this.onToggleTodo} className={this.props.todo.done ? "true" : "false"}>
+            <li onClick={this.onToggleTodo} className={this.props.todo.done ? "done" : "undone"}>
                 <span>{this.props.todo.text}</span>
                 <button onClick={this.onRemoveItem}>X</button>
             </li>
