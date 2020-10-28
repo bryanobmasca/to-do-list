@@ -1,3 +1,4 @@
+import { List } from 'antd';
 import React, { Component } from 'react';
 import ToDoItemContainer from '../../Container/ToDoItemContainer';
 
@@ -8,9 +9,11 @@ class ToDoGroup extends Component {
             <ToDoItemContainer key={todo.id} todo={todo}/>
         ));
         return (
-            <ul className="striped-list">
-                {todos}
-            </ul>
+            <div className="todo-group">
+                <List>
+                    {todos}
+                </List>
+            </div>
         );
     }
 }

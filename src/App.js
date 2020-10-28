@@ -55,8 +55,7 @@ class App extends Component {
             </Menu>
           </Sider>
           <Layout className="site-layout">
-            <Header className="site-layout-background" style={{ padding: 0 }} />
-            <Content style={{ margin: '0 16px' }}>
+            <Content style={{ margin: '40px 0 20px 0' }}>
               <Switch>
                 <Route exact path="/" component={ToDoList}></Route>
                 <Route exact path="/done" component={DoneListContainer}></Route>

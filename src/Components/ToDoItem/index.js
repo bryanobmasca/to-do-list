@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './index.css'
 import { deleteTodo, toggleTodo } from '../../apis/todos';
-
+import { Button, Checkbox, List } from 'antd';
+import { DeleteOutlined } from '@ant-design/icons';
 
 class ToDoItem extends Component {
     onToggleTodo = () => {
@@ -17,12 +18,15 @@ class ToDoItem extends Component {
     }
 
     render() {
-
         return (
-            <li onClick={this.onToggleTodo} className={this.props.todo.done ? "done" : "undone"}>
-                <span>{this.props.todo.text}</span>
-                <button onClick={this.onRemoveItem}>X</button>
-            </li>
+            <List.Item>
+                <Checkbox onClick={this.onToggleTodo} checked={this.props.todo.done}>
+                    <span>{this.props.todo.text}</span>
+                </Checkbox>
+                <div>
+                    <Button icon={<DeleteOutlined />} onClick={this.onRemoveItem} />
+                </div>
+            </List.Item >
         );
     }
 }
