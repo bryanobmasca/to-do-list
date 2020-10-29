@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { deleteTodo, toggleTodo } from '../apis/todos';
-import { Button, Checkbox, List, Tooltip } from 'antd';
+import { Button, Checkbox, List, Tooltip, Popconfirm } from 'antd';
 import { DeleteOutlined } from '@ant-design/icons';
 
 class ToDoItem extends Component {
@@ -11,11 +11,9 @@ class ToDoItem extends Component {
     }
 
     onRemoveItem = () => {
-        if (window.confirm('Delete "' + this.props.todo.text + '"?')) {
-            deleteTodo(this.props.todo.id).then(response => {
-                this.props.deleteToDo(response.data.id);
-            })
-        }
+        deleteTodo(this.props.todo.id).then(response => {
+            this.props.deleteToDo(response.data.id);
+        })
     }
 
     render() {
@@ -30,7 +28,15 @@ class ToDoItem extends Component {
                 </Tooltip>
                 <div>
                     <Tooltip placement="rightTop" title="Delete todo">
-                        <Button icon={<DeleteOutlined />} onClick={this.onRemoveItem} />
+                        <Popconfirm
+                            icon={<DeleteOutlined />} 
+                            title="Are you sure delete this todo?"
+                            onConfirm={this.onRemoveItem}
+                            okText="Yes"
+                            cancelText="No"
+                        >
+                            <Button icon={<DeleteOutlined />} />
+                        </Popconfirm>
                     </Tooltip>
                 </div>
             </List.Item >
