@@ -8,13 +8,12 @@ import React, { Component } from 'react';
 import { getTodos } from './apis/todos';
 import { initTodos } from './actions';
 import { connect } from 'react-redux';
-import { Image, Layout, Menu, } from 'antd';
+import { Layout, Menu, } from 'antd';
 import {
   UnorderedListOutlined,
   CheckOutlined,
   CloseOutlined,
 } from '@ant-design/icons';
-import logo from './to-do.png';
 
 const { Content, Footer, Sider } = Layout;
 class App extends Component {
@@ -39,7 +38,6 @@ class App extends Component {
       <BrowserRouter>
         <Layout style={{ minHeight: '100vh' }}>
           <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
-            <img src={logo} alt="Logo" width={75}/>
             <Menu theme="dark" defaultSelectedKeys={['all']} mode="inline">
               <Menu.Item key="all" icon={<UnorderedListOutlined />}>
                 <Link to="/">
