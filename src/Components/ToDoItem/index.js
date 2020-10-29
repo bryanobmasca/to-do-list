@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './index.css'
 import { deleteTodo, toggleTodo } from '../../apis/todos';
 import { Button, Checkbox, List } from 'antd';
 import { DeleteOutlined } from '@ant-design/icons';
@@ -12,7 +11,7 @@ class ToDoItem extends Component {
     }
 
     onRemoveItem = () => {
-        if (window.confirm('Delete "'+ this.props.todo.text+ '"?')) {
+        if (window.confirm('Delete "' + this.props.todo.text + '"?')) {
             deleteTodo(this.props.todo.id).then(response => {
                 this.props.deleteToDo(response.data.id);
             })
