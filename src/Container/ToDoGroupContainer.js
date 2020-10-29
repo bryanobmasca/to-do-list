@@ -2,12 +2,12 @@ import { connect } from "react-redux";
 import ToDoGroup from "../Components/ToDoGroup";
 
 
-const mapDispatchToProps = state => ({
+const mapStateToProps = state => ({
     todos: state.todos
 });
 
 
-const ToDoGroupContainer = connect(mapDispatchToProps)(
+const ToDoGroupContainer = connect(mapStateToProps)(
     ToDoGroup
 );
 
