@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { deleteTodo, toggleTodo } from '../apis/todos';
-import { Button, Checkbox, List } from 'antd';
+import { Button, Checkbox, List, Tooltip } from 'antd';
 import { DeleteOutlined } from '@ant-design/icons';
 
 class ToDoItem extends Component {
@@ -19,13 +19,19 @@ class ToDoItem extends Component {
     }
 
     render() {
+        const toggleTodoTooltip = "Mark todo as " + (this.props.todo.done ? "unfinished" : "finished")
+
         return (
             <List.Item>
-                <Checkbox onClick={this.onToggleTodo} checked={this.props.todo.done}>
-                    <span>{this.props.todo.text}</span>
-                </Checkbox>
+                <Tooltip placement="leftTop" title={toggleTodoTooltip}>
+                    <Checkbox onClick={this.onToggleTodo} checked={this.props.todo.done}>
+                        <span>{this.props.todo.text}</span>
+                    </Checkbox>
+                </Tooltip>
                 <div>
-                    <Button icon={<DeleteOutlined />} onClick={this.onRemoveItem} />
+                    <Tooltip placement="rightTop" title="Delete todo">
+                        <Button icon={<DeleteOutlined />} onClick={this.onRemoveItem} />
+                    </Tooltip>
                 </div>
             </List.Item >
         );
