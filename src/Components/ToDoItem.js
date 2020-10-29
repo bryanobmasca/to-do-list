@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { deleteTodo, toggleTodo } from '../../apis/todos';
+import { deleteTodo, toggleTodo } from '../apis/todos';
 import { Button, Checkbox, List } from 'antd';
 import { DeleteOutlined } from '@ant-design/icons';
 

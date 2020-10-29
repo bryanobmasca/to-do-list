@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { addTodo } from '../../apis/todos';
+import { addTodo } from '../apis/todos';
 import { Input, Form, Button, Row, Col } from 'antd';
 
 class ToDoGenerator extends Component {
