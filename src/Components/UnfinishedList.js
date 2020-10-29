@@ -11,7 +11,7 @@ class Unfinished extends Component {
         return (
             <Row>
                 <Col span={12} offset={6}>
-                    <Title>Unfinished List</Title>
+                    <Title>Unfinished Todos</Title>
                     <div className="todo-group">
                         <List size="large">
                             {todos}

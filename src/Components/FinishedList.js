@@ -11,7 +11,7 @@ class FinishedList extends Component {
         return (
             <Row>
                 <Col span={12} offset={6}>
-                    <Title>Finished List</Title>
+                    <Title>Finished Todos</Title>
                     <div className="todo-group">
                         <List size="large">
                             {todos}

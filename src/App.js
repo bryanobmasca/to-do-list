@@ -41,17 +41,17 @@ class App extends Component {
             <Menu theme="dark" defaultSelectedKeys={['all']} mode="inline">
               <Menu.Item key="all" icon={<UnorderedListOutlined />}>
                 <Link to="/">
-                  All List
+                  All Todos
                 </Link>
               </Menu.Item>
               <Menu.Item key="finished" icon={<CheckOutlined />}>
                 <Link to="/finished">
-                  Finished List
+                  Finished Todos
                 </Link>
               </Menu.Item>
               <Menu.Item key="unfinished" icon={<CloseOutlined />}>
                 <Link to="/unfinished">
-                  Unfinished List
+                  Unfinished Todos
                 </Link>
               </Menu.Item>
             </Menu>

@@ -11,7 +11,7 @@ class ToDoList extends Component {
         return (
             <Row>
                 <Col span={12} offset={6}>
-                    <Title>All List</Title>
+                    <Title>All Todos</Title>
                     <ToDoGeneratorContainer />
                     <ToDoGroupContainer />
                 </Col>
